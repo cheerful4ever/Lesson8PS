@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 LatLng poi_north = new LatLng(1.461708, 103.813500);
-                Marker cp = map.addMarker(new
+                Marker north = map.addMarker(new
                         MarkerOptions()
                         .position(poi_north)
                         .title("North - HQ")
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
                 LatLng poi_central = new LatLng(1.300542, 103.841226);
-                Marker rp = map.addMarker(new
+                Marker central = map.addMarker(new
                         MarkerOptions()
                         .position(poi_central)
                         .title("Central")
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
                 LatLng poi_east = new LatLng(1.350057, 103.934452);
-                Marker dp = map.addMarker(new
+                Marker east = map.addMarker(new
                         MarkerOptions()
                         .position(poi_east)
                         .title("East")
@@ -90,15 +91,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (map != null){
-                    map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    LatLng poi_north = new LatLng(1.461708, 103.813500);
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(poi_north, 15));
                 }
             }
         });
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (map != null){
-                    map.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                    LatLng poi_central = new LatLng(1.300542, 103.841226);
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(poi_central, 15));
                 }
             }
         });
@@ -107,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (map != null){
-                    map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    LatLng poi_east = new LatLng(1.350057, 103.934452);
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(poi_east, 15));
                 }
             }
         });
