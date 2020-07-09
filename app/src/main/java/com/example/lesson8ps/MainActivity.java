@@ -49,20 +49,33 @@ public class MainActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
                 }
 
-                LatLng poi_CausewayPoint = new LatLng(1.436065, 103.786263);
+                LatLng poi_north = new LatLng(1.461708, 103.813500);
                 Marker cp = map.addMarker(new
                         MarkerOptions()
-                        .position(poi_CausewayPoint)
-                        .title("Causeway Point")
-                        .snippet("Shopping after class")
+                        .position(poi_north)
+                        .title("North - HQ")
+                        .snippet("Block 333, Admiralty Ave 3, 765654 Operating hours: 10am-5pm\n" +
+                                "Tel:65433456\n")
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
-                LatLng poi_RP = new LatLng(1.44224, 103.785733);
+                LatLng poi_central = new LatLng(1.300542, 103.841226);
                 Marker rp = map.addMarker(new
                         MarkerOptions()
-                        .position(poi_RP)
-                        .title("Republic Polytechnic")
-                        .snippet("C347 Android Programming II")
+                        .position(poi_central)
+                        .title("Central")
+                        .snippet("Block 3A, Orchard Ave 3, 134542 \n" +
+                                "Operating hours: 11am-8pm\n" +
+                                "Tel:67788652\n")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
+
+                LatLng poi_east = new LatLng(1.350057, 103.934452);
+                Marker dp = map.addMarker(new
+                        MarkerOptions()
+                        .position(poi_east)
+                        .title("East")
+                        .snippet("Block 555, Tampines Ave 3, 287788 \n" +
+                                "Operating hours: 9am-5pm\n" +
+                                "Tel:66776677\"\n")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
 
 
