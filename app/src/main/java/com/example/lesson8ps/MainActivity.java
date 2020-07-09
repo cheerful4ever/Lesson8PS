@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         .snippet("Block 3A, Orchard Ave 3, 134542 \n" +
                                 "Operating hours: 11am-8pm\n" +
                                 "Tel:67788652\n")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
                 LatLng poi_east = new LatLng(1.350057, 103.934452);
                 Marker dp = map.addMarker(new
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         .snippet("Block 555, Tampines Ave 3, 287788 \n" +
                                 "Operating hours: 9am-5pm\n" +
                                 "Tel:66776677\"\n")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
 
             }
